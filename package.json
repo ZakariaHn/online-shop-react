@@ -1,7 +1,7 @@
 {
   "name": "online_shop_react",
   "version": "1.0.0",
-  "homepage": "https://github.com/ZakariaHn/online-shop-react",
+  "homepage": "https://zakariahn.github.io/online-shop-react/",
   "description": "project template",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "build": "react-scripts build",
     "publish": "gh-pages -d dist"
   },
-  "author": "Hadi Nsreeny",
+  "author": "Zakaria hamdan",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.5.0",
