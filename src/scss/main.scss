@@ -6,12 +6,18 @@ lable {
   margin: 0 2.7rem 2rem 0;
 }
 
-button {
-  margin-top: 1rem;
-}
 li {
   border: 1px solid black;
   list-style: none;
   padding: 1rem;
   width: 17vw;
+}
+
+i {
+  font-size: 1.5rem;
+}
+
+.final {
+  display: flex;
+  flex-direction: row;
 }

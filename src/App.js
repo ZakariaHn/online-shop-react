@@ -6,7 +6,6 @@ export default class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1>Welcome to our online store</h1>
         <ProductList data={Data} />
       </React.Fragment>
     );
