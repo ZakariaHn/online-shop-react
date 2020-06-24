@@ -10,7 +10,9 @@ export default class ProductItem extends React.Component {
   }
 
   increment = () => {
-    this.setState({ ammount: this.state.ammount + 1 });
+    this.setState({
+      ammount: this.state.ammount + 1,
+    });
   };
   decrement = () => {
     this.setState({ ammount: this.state.ammount - 1 });
@@ -21,7 +23,6 @@ export default class ProductItem extends React.Component {
       <li key={this.state.data.id}>
         {this.state.data.productName} <i>{this.state.data.icon}</i>
         <h5>{this.state.data.price} Eu</h5>
-        <h2></h2>
         <button
           disabled={this.state.data.inventory === 0}
           onClick={this.increment}
