@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/ZakariaHn/online-shop-react/static/css/main.27c1270b.chunk.css",
-    "main.js": "/ZakariaHn/online-shop-react/static/js/main.e95c49be.chunk.js",
-    "main.js.map": "/ZakariaHn/online-shop-react/static/js/main.e95c49be.chunk.js.map",
-    "runtime-main.js": "/ZakariaHn/online-shop-react/static/js/runtime-main.c417cedf.js",
-    "runtime-main.js.map": "/ZakariaHn/online-shop-react/static/js/runtime-main.c417cedf.js.map",
-    "static/js/2.736166c8.chunk.js": "/ZakariaHn/online-shop-react/static/js/2.736166c8.chunk.js",
-    "static/js/2.736166c8.chunk.js.map": "/ZakariaHn/online-shop-react/static/js/2.736166c8.chunk.js.map",
-    "index.html": "/ZakariaHn/online-shop-react/index.html",
-    "precache-manifest.d3b5e1d6817dab8aa417b0db299263d2.js": "/ZakariaHn/online-shop-react/precache-manifest.d3b5e1d6817dab8aa417b0db299263d2.js",
-    "service-worker.js": "/ZakariaHn/online-shop-react/service-worker.js",
-    "static/css/main.27c1270b.chunk.css.map": "/ZakariaHn/online-shop-react/static/css/main.27c1270b.chunk.css.map",
-    "static/js/2.736166c8.chunk.js.LICENSE.txt": "/ZakariaHn/online-shop-react/static/js/2.736166c8.chunk.js.LICENSE.txt"
+    "main.css": "/online-shop-react/static/css/main.27c1270b.chunk.css",
+    "main.js": "/online-shop-react/static/js/main.e95c49be.chunk.js",
+    "main.js.map": "/online-shop-react/static/js/main.e95c49be.chunk.js.map",
+    "runtime-main.js": "/online-shop-react/static/js/runtime-main.6b9295e0.js",
+    "runtime-main.js.map": "/online-shop-react/static/js/runtime-main.6b9295e0.js.map",
+    "static/js/2.736166c8.chunk.js": "/online-shop-react/static/js/2.736166c8.chunk.js",
+    "static/js/2.736166c8.chunk.js.map": "/online-shop-react/static/js/2.736166c8.chunk.js.map",
+    "index.html": "/online-shop-react/index.html",
+    "precache-manifest.ca513827250e909f761ec13c26fc6c27.js": "/online-shop-react/precache-manifest.ca513827250e909f761ec13c26fc6c27.js",
+    "service-worker.js": "/online-shop-react/service-worker.js",
+    "static/css/main.27c1270b.chunk.css.map": "/online-shop-react/static/css/main.27c1270b.chunk.css.map",
+    "static/js/2.736166c8.chunk.js.LICENSE.txt": "/online-shop-react/static/js/2.736166c8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.c417cedf.js",
+    "static/js/runtime-main.6b9295e0.js",
     "static/js/2.736166c8.chunk.js",
     "static/css/main.27c1270b.chunk.css",
     "static/js/main.e95c49be.chunk.js"
