@@ -17,12 +17,15 @@ export default class ProductItem extends React.Component {
       totalPrice:
         this.state.ammount * this.state.data.price + this.state.data.price,
     });
-    let totalAmount = 0;
-    totalAmount += this.state.ammount;
+    // let totalAmount = 0;
+    // totalAmount += this.state.ammount;
   };
 
   decrement = () => {
-    this.setState({ ammount: this.state.ammount - 1 });
+    this.setState({
+      ammount: this.state.ammount - 1,
+      totalPrice: this.state.totalPrice - this.state.data.price,
+    });
   };
 
   render() {
@@ -30,15 +33,18 @@ export default class ProductItem extends React.Component {
     return (
       <li key={id}>
         {productName} <i>{icon}</i>
-        <h5>{price} Eu</h5>
+        <h5>Price for one Item {price} Eu</h5>
+        <lable>Corp: {this.state.ammount}</lable>
+        <lable>TotalPrice {this.state.totalPrice} Eu</lable>
+        <br></br>
         <button disabled={inventory === 0} onClick={this.increment}>
           {inventory > 0 ? "Add to cart" : "Sold out"}
         </button>
         <button disabled={this.state.ammount === 0} onClick={this.decrement}>
           Remove from cart
         </button>
-        <h2>{this.state.ammount}</h2>
-        <h2>TotalPrice {this.state.totalPrice}</h2>
+        <br></br>
+        <br></br>
       </li>
     );
   }
