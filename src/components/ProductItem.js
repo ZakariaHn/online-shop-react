@@ -3,7 +3,10 @@ import React from "react";
 export default class ProductItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { ammount: 0 };
+    this.state = {
+      ammount: 0,
+      data: this.props.info,
+    };
   }
 
   increment = () => {
@@ -12,21 +15,24 @@ export default class ProductItem extends React.Component {
   decrement = () => {
     this.setState({ ammount: this.state.ammount - 1 });
   };
+
   render() {
     return (
-      <div>
-        <button onClick={this.increment}>+</button>
-        <button onClick={this.decrement}>-</button>
+      <li key={this.state.data.id}>
+        {this.state.data.productName} <i>{this.state.data.icon}</i>
+        <h5>{this.state.data.price} Eu</h5>
+        <h2></h2>
+        <button
+          disabled={this.state.data.inventory === 0}
+          onClick={this.increment}
+        >
+          {this.state.data.inventory > 0 ? "Add to cart" : "Sold out"}
+        </button>
+        <button disabled={this.state.ammount === 0} onClick={this.decrement}>
+          Remove from cart
+        </button>
         <h2>{this.state.ammount}</h2>
-      </div>
-      // <li key={id}>
-      //   {productName} <i>{icon}</i>
-      //   <h5>{price} Eu</h5>
-      //   <h2></h2>
-      //   <button disabled={inventory === 0} onClick={add}>
-      //     {inventory > 0 ? "Add to cart" : "Sold out"}
-      //   </button>
-      // </li>
+      </li>
     );
   }
 }
