@@ -1,15 +1,22 @@
 import React from "react";
 import ProductItem from "./ProductItem";
 
-const ProductList = (props) => {
-  const items = props.data.map((item, i) => {
-    return <ProductItem info={item} key={i} />;
-  });
-  return (
-    <div>
-      <ul>{items}</ul>
-    </div>
-  );
-};
+export default class ProductList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: props.data,
+    };
+    this.mappedItems = this.state.items.map((item, i) => {
+      return <ProductItem info={item} key={i} />;
+    });
+  }
 
-export default ProductList;
+  render() {
+    return (
+      <div>
+        <ul>{this.mappedItems}</ul>
+      </div>
+    );
+  }
+}
