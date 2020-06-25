@@ -20,13 +20,11 @@ export default class App extends Component {
 
   submitHandler = (e) => {
     e.preventDefault();
-    const userText = this.state.userInput;
+    const userText = this.state.userInput.toLowerCase();
     let newArr = this.state.data.filter(
       (item) => item.productName === userText
     );
-    this.state.userInput === ""
-      ? this.setState({ filteredData: [] })
-      : this.setState({ filteredData: newArr });
+    this.setState({ filteredData: newArr });
   };
 
   render() {
