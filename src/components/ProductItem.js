@@ -55,7 +55,7 @@ export default class ProductItem extends React.Component {
         </div>
         <h5>{`Total price ${this.state.sameSortPrice} Eu`}</h5>
         <button onClick={this.addToCorp}>
-          {inventory > 0 ? "Add to corp" : "Sold out"}
+          {inventory > 0 ? "Add to cart" : "Sold out"}
         </button>
       </li>
     );

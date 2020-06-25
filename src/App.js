@@ -27,7 +27,7 @@ export default class App extends Component {
 
   submitHandler = (e) => {
     e.preventDefault();
-    const userText = this.state.userInput.toLocaleLowerCase();
+    const userText = this.state.userInput.toLowerCase();
     const searchText = userText ? userText : "";
     let newArr = this.state.data.filter(
       (item) => item.productName === searchText
