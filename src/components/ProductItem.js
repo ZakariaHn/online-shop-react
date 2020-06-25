@@ -22,7 +22,7 @@ export default class ProductItem extends React.Component {
     this.state.total.push(this.state.data.price);
     // let allItemsPrice = [];
     // allItemsPrice.push(this.state.data.price);
-    console.log(this.state.total);
+
     // return allItemsPrice;
   };
 
@@ -34,12 +34,16 @@ export default class ProductItem extends React.Component {
   };
 
   addToCorp = () => {
+    let sum = this.state.total.reduce((cur, acc) => cur + acc, 0);
+    this.state.finalPrice.push(sum);
+    let test = 0;
+    test += sum;
     this.setState({
       ammount: 0,
       sameSortPrice: 0,
-      total: [...this.state.total],
     });
-    let sum = this.state.total.reduce((cur, acc) => cur + acc);
+
+    console.log(test);
 
     // let finalsum = this.state.total.reduce((cur, acc) => cur + acc);
     // this.state.finalPrice.push(finalsum);
@@ -52,20 +56,19 @@ export default class ProductItem extends React.Component {
       <li key={id}>
         {productName} <i>{icon}</i>
         <h5>Price for one item is {price} Eu</h5>
-        <h5>Corp: {this.state.ammount}</h5>
-        <h5>Total price {this.state.sameSortPrice} Eu</h5>
-        <br></br>
-        <button disabled={inventory === 0} onClick={this.increment}>
-          +
-        </button>
-        <button disabled={this.state.ammount === 0} onClick={this.decrement}>
-          -
-        </button>
+        <div className="buttons">
+          <button disabled={inventory === 0} onClick={this.increment}>
+            +
+          </button>
+          <h5> {this.state.ammount}</h5>
+          <button disabled={this.state.ammount === 0} onClick={this.decrement}>
+            -
+          </button>
+        </div>
+        <h5>{`Total price ${this.state.sameSortPrice} Eu`}</h5>
         <button onClick={this.addToCorp}>
           {inventory > 0 ? "Add to cart" : "Sold out"}
         </button>
-        <br></br>
-        <br></br>
         {/* <ProductList finaly={this.state.finalPrice} /> */}
       </li>
     );
