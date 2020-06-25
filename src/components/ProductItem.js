@@ -34,8 +34,10 @@ export default class ProductItem extends React.Component {
     this.setState({
       ammount: 0,
       sameSortPrice: 0,
+      finalPrice: this.state.finalPrice + sum,
     });
-    console.log(sum);
+
+    console.log(this.state.finalPrice);
   };
 
   render() {

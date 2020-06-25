@@ -16,15 +16,25 @@ export default class App extends Component {
     this.setState({
       userInput: e.target.value.trim(),
     });
-  };
-
-  submitHandler = (e) => {
-    e.preventDefault();
     const userText = this.state.userInput.toLowerCase();
     let newArr = this.state.data.filter(
       (item) => item.productName === userText
     );
-    this.setState({ filteredData: newArr });
+    this.state.userInput === ""
+      ? this.setState({ filteredData: [] })
+      : this.setState({ filteredData: newArr });
+  };
+
+  submitHandler = (e) => {
+    e.preventDefault();
+    const userText = this.state.userInput.toLocaleLowerCase();
+    const searchText = userText ? userText : "";
+    let newArr = this.state.data.filter(
+      (item) => item.productName === searchText
+    );
+    this.setState({
+      filteredData: newArr,
+    });
   };
 
   render() {
