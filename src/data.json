@@ -1,7 +1,7 @@
 [
   {
     "id": 0,
-    "productName": "Apple",
+    "productName": "apple",
     "icon": "🍏",
     "price": 0.5,
     "inventory": 10,
@@ -9,7 +9,7 @@
   },
   {
     "id": 1,
-    "productName": "Watermelon",
+    "productName": "watermelon",
     "icon": "🍉",
     "price": 1,
     "inventory": 3,
@@ -17,7 +17,7 @@
   },
   {
     "id": 2,
-    "productName": "Pizza",
+    "productName": "pizza",
     "icon": "🍕",
     "price": 7,
     "inventory": 100,
@@ -25,7 +25,7 @@
   },
   {
     "id": 3,
-    "productName": "Salad",
+    "productName": "salad",
     "icon": "🥗",
     "price": 3.5,
     "inventory": 0,
@@ -33,7 +33,7 @@
   },
   {
     "id": 4,
-    "productName": "Ice cream",
+    "productName": "ice cream",
     "icon": "🍦",
     "price": 2,
     "inventory": 66,
