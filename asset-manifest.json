@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/online-shop-react/static/css/main.822a9901.chunk.css",
-    "main.js": "/online-shop-react/static/js/main.98ba4ba8.chunk.js",
-    "main.js.map": "/online-shop-react/static/js/main.98ba4ba8.chunk.js.map",
+    "main.css": "/online-shop-react/static/css/main.a8653b20.chunk.css",
+    "main.js": "/online-shop-react/static/js/main.455dabca.chunk.js",
+    "main.js.map": "/online-shop-react/static/js/main.455dabca.chunk.js.map",
     "runtime-main.js": "/online-shop-react/static/js/runtime-main.6b9295e0.js",
     "runtime-main.js.map": "/online-shop-react/static/js/runtime-main.6b9295e0.js.map",
     "static/js/2.736166c8.chunk.js": "/online-shop-react/static/js/2.736166c8.chunk.js",
     "static/js/2.736166c8.chunk.js.map": "/online-shop-react/static/js/2.736166c8.chunk.js.map",
     "index.html": "/online-shop-react/index.html",
-    "precache-manifest.6c45eaf10eaef7c34fa9305970eb5992.js": "/online-shop-react/precache-manifest.6c45eaf10eaef7c34fa9305970eb5992.js",
+    "precache-manifest.1a6b80a6f35ed45138fcc73e354634b6.js": "/online-shop-react/precache-manifest.1a6b80a6f35ed45138fcc73e354634b6.js",
     "service-worker.js": "/online-shop-react/service-worker.js",
-    "static/css/main.822a9901.chunk.css.map": "/online-shop-react/static/css/main.822a9901.chunk.css.map",
+    "static/css/main.a8653b20.chunk.css.map": "/online-shop-react/static/css/main.a8653b20.chunk.css.map",
     "static/js/2.736166c8.chunk.js.LICENSE.txt": "/online-shop-react/static/js/2.736166c8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6b9295e0.js",
     "static/js/2.736166c8.chunk.js",
-    "static/css/main.822a9901.chunk.css",
-    "static/js/main.98ba4ba8.chunk.js"
+    "static/css/main.a8653b20.chunk.css",
+    "static/js/main.455dabca.chunk.js"
   ]
 }
