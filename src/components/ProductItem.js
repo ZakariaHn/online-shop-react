@@ -8,7 +8,7 @@ export default class ProductItem extends React.Component {
       ammount: 0,
       sameSortPrice: 0,
       total: [],
-      finalPrice: [],
+      finalPrice: 0,
       data: this.props.info,
     };
   }
@@ -20,10 +20,6 @@ export default class ProductItem extends React.Component {
         this.state.ammount * this.state.data.price + this.state.data.price,
     });
     this.state.total.push(this.state.data.price);
-    // let allItemsPrice = [];
-    // allItemsPrice.push(this.state.data.price);
-
-    // return allItemsPrice;
   };
 
   decrement = () => {
@@ -35,19 +31,11 @@ export default class ProductItem extends React.Component {
 
   addToCorp = () => {
     let sum = this.state.total.reduce((cur, acc) => cur + acc, 0);
-    this.state.finalPrice.push(sum);
-    let test = 0;
-    test += sum;
     this.setState({
       ammount: 0,
       sameSortPrice: 0,
     });
-
-    console.log(test);
-
-    // let finalsum = this.state.total.reduce((cur, acc) => cur + acc);
-    // this.state.finalPrice.push(finalsum);
-    // console.log(finalsum);
+    console.log(sum);
   };
 
   render() {
@@ -67,9 +55,8 @@ export default class ProductItem extends React.Component {
         </div>
         <h5>{`Total price ${this.state.sameSortPrice} Eu`}</h5>
         <button onClick={this.addToCorp}>
-          {inventory > 0 ? "Add to cart" : "Sold out"}
+          {inventory > 0 ? "Add to corp" : "Sold out"}
         </button>
-        {/* <ProductList finaly={this.state.finalPrice} /> */}
       </li>
     );
   }
