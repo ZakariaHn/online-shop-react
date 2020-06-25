@@ -7,16 +7,18 @@ export default class ProductList extends React.Component {
     this.state = {
       items: props.data,
     };
+
     this.mappedItems = this.state.items.map((item, i) => {
       return <ProductItem info={item} key={i} />;
     });
   }
-
   render() {
     return (
-      <div>
-        <ul>{this.mappedItems}</ul>
-      </div>
+      <React.Fragment>
+        <div>
+          <ul>{this.mappedItems}</ul>
+        </div>
+      </React.Fragment>
     );
   }
 }

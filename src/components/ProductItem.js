@@ -36,8 +36,6 @@ export default class ProductItem extends React.Component {
       sameSortPrice: 0,
       finalPrice: this.state.finalPrice + sum,
     });
-
-    console.log(this.state.finalPrice);
   };
 
   render() {
