@@ -8,38 +8,50 @@ export default class ProductItem extends React.Component {
       ammount: 0,
       sameSortPrice: 0,
       total: [],
-      finalPrice: 0,
+      finalPrice: [],
       data: this.props.info,
     };
   }
 
   increment = () => {
+    const { ammount, total } = this.state,
+      { price } = this.state.data;
+
     this.setState({
-      ammount: this.state.ammount + 1,
-      sameSortPrice:
-        this.state.ammount * this.state.data.price + this.state.data.price,
+      ammount: ammount + 1,
+      sameSortPrice: ammount * price + price,
     });
-    this.state.total.push(this.state.data.price);
+
+    total.push(price);
   };
 
   decrement = () => {
+    const { ammount, sameSortPrice } = this.state,
+      { price } = this.state.data;
+
     this.setState({
-      ammount: this.state.ammount - 1,
-      sameSortPrice: this.state.sameSortPrice - this.state.data.price,
+      ammount: ammount - 1,
+      sameSortPrice: sameSortPrice - price,
     });
   };
 
   addToCorp = () => {
-    let sum = this.state.total.reduce((cur, acc) => cur + acc, 0);
+    const { total, finalPrice } = this.state;
+    let sum = total.reduce((cur, acc) => cur + acc);
+
     this.setState({
       ammount: 0,
       sameSortPrice: 0,
-      finalPrice: this.state.finalPrice + sum,
     });
+
+    finalPrice.push(sum);
+    console.log(finalPrice);
   };
 
   render() {
-    const { id, price, productName, icon, inventory } = this.state.data;
+    const { id, price, productName, icon, inventory } = this.state.data,
+      { ammount, sameSortPrice } = this.state;
+
     return (
       <li key={id}>
         {productName} <i>{icon}</i>
@@ -48,12 +60,12 @@ export default class ProductItem extends React.Component {
           <button disabled={inventory === 0} onClick={this.increment}>
             +
           </button>
-          <h5> {this.state.ammount}</h5>
-          <button disabled={this.state.ammount === 0} onClick={this.decrement}>
+          <h5> {ammount}</h5>
+          <button disabled={ammount === 0} onClick={this.decrement}>
             -
           </button>
         </div>
-        <h5>{`Total price ${this.state.sameSortPrice} Eu`}</h5>
+        <h5>{`Total price ${sameSortPrice} Eu`}</h5>
         <button onClick={this.addToCorp}>
           {inventory > 0 ? "Add to cart" : "Sold out"}
         </button>
