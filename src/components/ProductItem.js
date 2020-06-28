@@ -1,5 +1,4 @@
 import React from "react";
-// import ProductList from "./ProductList";
 
 export default class ProductItem extends React.Component {
   render() {
@@ -10,10 +9,11 @@ export default class ProductItem extends React.Component {
       inventory,
       icon,
       productName,
+      totalPrice,
     } = this.props.item;
     return (
       <li key={id}>
-        {productName} <i>{icon}</i>
+        {/* {productName} <i>{icon}</i>  */}
         <h5>Price for one item is {price} Eu</h5>
         <div className="buttons">
           <button
@@ -30,10 +30,10 @@ export default class ProductItem extends React.Component {
             -
           </button>
         </div>
-        {/* <h5>{`Total price ${sameSortPrice} Eu`}</h5>
+        <h5>{`Total price ${totalPrice} Eu`}</h5>
         <button onClick={this.addToCorp}>
           {inventory > 0 ? "Add to cart" : "Sold out"}
-        </button> */}
+        </button>
       </li>
     );
   }

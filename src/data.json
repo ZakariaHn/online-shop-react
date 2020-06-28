@@ -5,7 +5,8 @@
     "icon": "🍏",
     "price": 0.5,
     "inventory": 10,
-    "ammount": 0
+    "ammount": 0,
+    "totalPrice": 0
   },
   {
     "id": 1,
@@ -13,7 +14,8 @@
     "icon": "🍉",
     "price": 1,
     "inventory": 3,
-    "ammount": 0
+    "ammount": 0,
+    "totalPrice": 0
   },
   {
     "id": 2,
@@ -21,7 +23,8 @@
     "icon": "🍕",
     "price": 7,
     "inventory": 100,
-    "ammount": 0
+    "ammount": 0,
+    "totalPrice": 0
   },
   {
     "id": 3,
@@ -29,7 +32,8 @@
     "icon": "🥗",
     "price": 3.5,
     "inventory": 0,
-    "ammount": 0
+    "ammount": 0,
+    "totalPrice": 0
   },
   {
     "id": 4,
@@ -37,6 +41,7 @@
     "icon": "🍦",
     "price": 2,
     "inventory": 66,
-    "ammount": 0
+    "ammount": 0,
+    "totalPrice": 0
   }
 ]

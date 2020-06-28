@@ -7,6 +7,7 @@ export default class ProductList extends React.Component {
     this.state = {
       items: props.data,
     };
+    console.log(this.state.items);
   }
 
   // addToCorp = () => {
@@ -27,6 +28,8 @@ export default class ProductList extends React.Component {
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
     counters[index].ammount++;
+    counters[index].totalPrice =
+      counters[index].ammount * counters[index].price;
     this.setState({
       items: counters,
     });
@@ -37,6 +40,8 @@ export default class ProductList extends React.Component {
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
     counters[index].ammount--;
+    counters[index].totalPrice =
+      counters[index].totalPrice - counters[index].price;
     this.setState({
       items: counters,
     });
