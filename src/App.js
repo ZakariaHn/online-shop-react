@@ -48,12 +48,10 @@ export default class App extends Component {
           />
           <input type="submit" value="filter" />
         </form>
-        <ProductList
-          data={
-            this.state.userInput ? this.state.filteredData : this.state.data
-          }
-        />
+        <ProductList data={this.state.data} />
       </React.Fragment>
     );
   }
 }
+
+// this.state.userInput ? this.state.filteredData :

@@ -7,17 +7,54 @@ export default class ProductList extends React.Component {
     this.state = {
       items: props.data,
     };
-
-    this.mappedItems = this.state.items.map((item, i) => {
-      return <ProductItem info={item} key={i} />;
-    });
   }
+
+  // addToCorp = () => {
+  //   const { total, finalPrice } = this.state;
+  //   let sum = total.reduce((cur, acc) => cur + acc);
+
+  //   this.setState({
+  //     ammount: 0,
+  //     sameSortPrice: 0,
+  //   });
+
+  //   finalPrice.push(sum);
+  //   console.log(finalPrice);
+  // };
+
+  increment = (counter) => {
+    const counters = [...this.state.items];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].ammount++;
+    this.setState({
+      items: counters,
+    });
+  };
+
+  decrement = (counter) => {
+    const counters = [...this.state.items];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].ammount--;
+    this.setState({
+      items: counters,
+    });
+  };
+
   render() {
     return (
       <React.Fragment>
-        <div>
-          <ul>{this.mappedItems}</ul>
-        </div>
+        {this.state.items.map((item) => {
+          return (
+            <ProductItem
+              item={item}
+              key={item.id}
+              onIncrement={this.increment}
+              onDecrement={this.decrement}
+            />
+          );
+        })}
       </React.Fragment>
     );
   }
