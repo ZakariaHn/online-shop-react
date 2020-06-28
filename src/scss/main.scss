@@ -30,10 +30,6 @@ h5 {
   width: 1rem;
   flex-direction: column;
   align-items: center;
-
-  button {
-    width: 3rem;
-  }
 }
 
 .productItem {
@@ -50,11 +46,17 @@ h5 {
 
 .counter {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+
   width: 15vw;
   p {
-    color: red;
+    color: rgb(231, 42, 42);
+    padding-left: 0.5rem;
   }
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

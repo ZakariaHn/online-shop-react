@@ -26,7 +26,6 @@ export default class App extends Component {
     this.setState({
       data: counters,
     });
-    console.log(this.state.allItemsPrice);
   };
 
   decrement = (counter) => {
@@ -48,6 +47,16 @@ export default class App extends Component {
     });
   };
 
+  handleReset = () => {
+    const counters = this.state.data.map((c) => {
+      c.ammount = 0;
+      c.totalPrice = 0;
+      return c;
+    });
+    this.setState({ counters, totalCoasts: 0 });
+  };
+
+  handlePrintPill = () => {};
   // ====================> filter functions <==============
 
   changeHandler = (e) => {
@@ -75,21 +84,13 @@ export default class App extends Component {
     });
   };
 
-  handleReset = () => {
-    const counters = this.state.data.map((c) => {
-      c.ammount = 0;
-      c.totalPrice = 0;
-      return c;
-    });
-    this.setState({ counters, totalCoasts: 0 });
-  };
-
   render() {
     return (
       <React.Fragment>
         <header className="header">
           <Form onSubmit={this.submitHandler} onChange={this.changeHandler} />
           <Counter
+            onPrint={this.handlePrintPill}
             onReset={this.handleReset}
             totalCoasts={this.state.totalCoasts}
           />

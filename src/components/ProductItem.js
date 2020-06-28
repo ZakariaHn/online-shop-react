@@ -13,8 +13,11 @@ export default class ProductItem extends React.Component {
     } = this.props.item;
     return (
       <li key={id}>
-        {productName} <i>{icon}</i>
-        <h5>Price for one item is {price} Eu</h5>
+        <div className="cardHeader">
+          <h5> {productName} </h5>
+          <i>{icon}</i>
+        </div>
+        <p>{price} €</p>
         <div className="buttons">
           <button
             className="btn btn-danger btn-sm m-2"
@@ -32,7 +35,7 @@ export default class ProductItem extends React.Component {
             -
           </button>
         </div>
-        <h5>{`Total price ${totalPrice} Eu`}</h5>
+        <p>{`Total price ${totalPrice} €`}</p>
         <button
           onClick={() => this.props.onAddToCorp(this.props.item)}
           className="btn btn-primary btn-sm m-2"
