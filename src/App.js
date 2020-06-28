@@ -12,6 +12,30 @@ export default class App extends Component {
     };
   }
 
+  increment = (counter) => {
+    const counters = [...this.state.data];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].ammount++;
+    counters[index].totalPrice =
+      counters[index].ammount * counters[index].price;
+    this.setState({
+      data: counters,
+    });
+  };
+
+  decrement = (counter) => {
+    const counters = [...this.state.items];
+    const index = counters.indexOf(counter);
+    counters[index] = { ...counter };
+    counters[index].ammount--;
+    counters[index].totalPrice =
+      counters[index].totalPrice - counters[index].price;
+    this.setState({
+      items: counters,
+    });
+  };
+
   changeHandler = (e) => {
     this.setState({
       userInput: e.target.value.trim(),
@@ -40,15 +64,19 @@ export default class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <form onSubmit={this.submitHandler}>
-          <input
-            type="text"
-            onChange={this.changeHandler}
-            value={this.state.userInput}
-          />
-          <input type="submit" value="filter" />
-        </form>
-        <ProductList data={this.state.data} />
+        {/* <form onSubmit={this.submitHandler}>
+      <input
+        type="text"
+        onChange={this.changeHandler}
+        value={this.state.userInput}
+      />
+      <input type="submit" value="filter" />
+      </form> */}
+        <ProductList
+          data={this.state.data}
+          onIncrement={this.increment}
+          onDecrement={this.decrement}
+        />
       </React.Fragment>
     );
   }
