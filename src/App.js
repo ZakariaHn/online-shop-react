@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Data from "./data.json";
 import ProductList from "./components/ProductList";
 import Form from "./components/Form";
+import Counter from "./components/counter";
 
 export default class App extends Component {
   constructor(props) {
@@ -11,6 +12,7 @@ export default class App extends Component {
       data: Data,
       filteredData: [],
       allItemsPrice: [],
+      totalCoasts: 0,
     };
   }
 
@@ -37,12 +39,13 @@ export default class App extends Component {
     this.setState({
       data: counters,
     });
-    console.log(this.state.allItemsPrice);
   };
 
   addToCorp = () => {
     let sum = this.state.allItemsPrice.reduce((cur, acc) => cur + acc);
-    console.log(sum);
+    this.setState({
+      totalCoasts: sum,
+    });
   };
 
   // ====================> filter functions <==============
@@ -72,10 +75,24 @@ export default class App extends Component {
     });
   };
 
+  handleReset = () => {
+    const counters = this.state.data.map((c) => {
+      c.ammount = 0;
+      c.totalPrice = 0;
+      c.totalCoasts = 0;
+      return c;
+    });
+    this.setState({ counters });
+  };
+
   render() {
     return (
       <React.Fragment>
         <Form onSubmit={this.submitHandler} onChange={this.changeHandler} />
+        <Counter
+          onReset={this.handleReset}
+          totalCoasts={this.state.totalCoasts}
+        />
         <ProductList
           data={
             this.state.userInput ? this.state.filteredData : this.state.data
