@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/online-shop-react/static/css/main.c2dcaeaf.chunk.css",
-    "main.js": "/online-shop-react/static/js/main.f7f76ef9.chunk.js",
-    "main.js.map": "/online-shop-react/static/js/main.f7f76ef9.chunk.js.map",
+    "main.css": "/online-shop-react/static/css/main.1bbc426a.chunk.css",
+    "main.js": "/online-shop-react/static/js/main.0e1acaeb.chunk.js",
+    "main.js.map": "/online-shop-react/static/js/main.0e1acaeb.chunk.js.map",
     "runtime-main.js": "/online-shop-react/static/js/runtime-main.6b9295e0.js",
     "runtime-main.js.map": "/online-shop-react/static/js/runtime-main.6b9295e0.js.map",
     "static/css/2.829c9cb5.chunk.css": "/online-shop-react/static/css/2.829c9cb5.chunk.css",
     "static/js/2.8dd16187.chunk.js": "/online-shop-react/static/js/2.8dd16187.chunk.js",
     "static/js/2.8dd16187.chunk.js.map": "/online-shop-react/static/js/2.8dd16187.chunk.js.map",
     "index.html": "/online-shop-react/index.html",
-    "precache-manifest.3adecad8afef1701cb740a67c89adb51.js": "/online-shop-react/precache-manifest.3adecad8afef1701cb740a67c89adb51.js",
+    "precache-manifest.d271558a974eccbab419ef5be3e6b841.js": "/online-shop-react/precache-manifest.d271558a974eccbab419ef5be3e6b841.js",
     "service-worker.js": "/online-shop-react/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/online-shop-react/static/css/2.829c9cb5.chunk.css.map",
-    "static/css/main.c2dcaeaf.chunk.css.map": "/online-shop-react/static/css/main.c2dcaeaf.chunk.css.map",
+    "static/css/main.1bbc426a.chunk.css.map": "/online-shop-react/static/css/main.1bbc426a.chunk.css.map",
     "static/js/2.8dd16187.chunk.js.LICENSE.txt": "/online-shop-react/static/js/2.8dd16187.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.6b9295e0.js",
     "static/css/2.829c9cb5.chunk.css",
     "static/js/2.8dd16187.chunk.js",
-    "static/css/main.c2dcaeaf.chunk.css",
-    "static/js/main.f7f76ef9.chunk.js"
+    "static/css/main.1bbc426a.chunk.css",
+    "static/js/main.0e1acaeb.chunk.js"
   ]
 }
