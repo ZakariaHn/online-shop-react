@@ -3,11 +3,14 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  padding: 3rem;
+}
 li {
   border: 1px solid black;
   list-style: none;
   padding: 1rem;
-  width: 20vw;
+  width: 15vw;
   display: flex;
   flex-direction: column;
 }
@@ -29,12 +32,29 @@ h5 {
   align-items: center;
 
   button {
-    width: 1rem;
-    border: none;
-    display: flex;
-    justify-content: center;
-    outline: none;
-    -webkit-outline: none;
-    font-weight: bolder;
+    width: 3rem;
+  }
+}
+
+.productItem {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem 0 3rem;
+  margin-bottom: 2rem;
+}
+
+.counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 15vw;
+  p {
+    color: red;
   }
 }

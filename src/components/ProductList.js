@@ -4,7 +4,7 @@ import ProductItem from "./ProductItem";
 export default class ProductList extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="productItem">
         {this.props.data.map((item) => {
           return (
             <ProductItem
@@ -16,7 +16,7 @@ export default class ProductList extends React.Component {
             />
           );
         })}
-      </React.Fragment>
+      </div>
     );
   }
 }

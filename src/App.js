@@ -79,20 +79,21 @@ export default class App extends Component {
     const counters = this.state.data.map((c) => {
       c.ammount = 0;
       c.totalPrice = 0;
-      c.totalCoasts = 0;
       return c;
     });
-    this.setState({ counters });
+    this.setState({ counters, totalCoasts: 0 });
   };
 
   render() {
     return (
       <React.Fragment>
-        <Form onSubmit={this.submitHandler} onChange={this.changeHandler} />
-        <Counter
-          onReset={this.handleReset}
-          totalCoasts={this.state.totalCoasts}
-        />
+        <header className="header">
+          <Form onSubmit={this.submitHandler} onChange={this.changeHandler} />
+          <Counter
+            onReset={this.handleReset}
+            totalCoasts={this.state.totalCoasts}
+          />
+        </header>
         <ProductList
           data={
             this.state.userInput ? this.state.filteredData : this.state.data
