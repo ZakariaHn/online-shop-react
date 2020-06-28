@@ -25,14 +25,14 @@ export default class App extends Component {
   };
 
   decrement = (counter) => {
-    const counters = [...this.state.items];
+    const counters = [...this.state.data];
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
     counters[index].ammount--;
     counters[index].totalPrice =
       counters[index].totalPrice - counters[index].price;
     this.setState({
-      items: counters,
+      data: counters,
     });
   };
 
@@ -64,16 +64,18 @@ export default class App extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <form onSubmit={this.submitHandler}>
-      <input
-        type="text"
-        onChange={this.changeHandler}
-        value={this.state.userInput}
-      />
-      <input type="submit" value="filter" />
-      </form> */}
+        <form onSubmit={this.submitHandler}>
+          <input
+            type="text"
+            onChange={this.changeHandler}
+            value={this.state.userInput}
+          />
+          <input type="submit" value="filter" />
+        </form>
         <ProductList
-          data={this.state.data}
+          data={
+            this.state.userInput ? this.state.filteredData : this.state.data
+          }
           onIncrement={this.increment}
           onDecrement={this.decrement}
         />
@@ -81,5 +83,3 @@ export default class App extends Component {
     );
   }
 }
-
-// this.state.userInput ? this.state.filteredData :
