@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Data from "./data.json";
 import ProductList from "./components/ProductList";
+import Form from "./components/Form";
 
 export default class App extends Component {
   constructor(props) {
@@ -9,32 +10,42 @@ export default class App extends Component {
       userInput: "",
       data: Data,
       filteredData: [],
+      allItemsPrice: [],
     };
   }
 
   increment = (counter) => {
     const counters = [...this.state.data];
-    const index = counters.indexOf(counter);
-    counters[index] = { ...counter };
-    counters[index].ammount++;
-    counters[index].totalPrice =
-      counters[index].ammount * counters[index].price;
+    const i = counters.indexOf(counter);
+    counters[i] = { ...counter };
+    counters[i].ammount++;
+    counters[i].totalPrice = counters[i].ammount * counters[i].price;
+    this.state.allItemsPrice.push(counters[i].price);
     this.setState({
       data: counters,
     });
+    console.log(this.state.allItemsPrice);
   };
 
   decrement = (counter) => {
     const counters = [...this.state.data];
-    const index = counters.indexOf(counter);
-    counters[index] = { ...counter };
-    counters[index].ammount--;
-    counters[index].totalPrice =
-      counters[index].totalPrice - counters[index].price;
+    const i = counters.indexOf(counter);
+    counters[i] = { ...counter };
+    counters[i].ammount--;
+    counters[i].totalPrice = counters[i].totalPrice - counters[i].price;
+
     this.setState({
       data: counters,
     });
+    console.log(this.state.allItemsPrice);
   };
+
+  addToCorp = () => {
+    let sum = this.state.allItemsPrice.reduce((cur, acc) => cur + acc);
+    console.log(sum);
+  };
+
+  // ====================> filter functions <==============
 
   changeHandler = (e) => {
     this.setState({
@@ -64,20 +75,14 @@ export default class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <form onSubmit={this.submitHandler}>
-          <input
-            type="text"
-            onChange={this.changeHandler}
-            value={this.state.userInput}
-          />
-          <input type="submit" value="filter" />
-        </form>
+        <Form onSubmit={this.submitHandler} onChange={this.changeHandler} />
         <ProductList
           data={
             this.state.userInput ? this.state.filteredData : this.state.data
           }
           onIncrement={this.increment}
           onDecrement={this.decrement}
+          onAddToCorp={this.addToCorp}
         />
       </React.Fragment>
     );

@@ -33,7 +33,10 @@ export default class ProductItem extends React.Component {
           </button>
         </div>
         <h5>{`Total price ${totalPrice} Eu`}</h5>
-        <button onClick={this.addToCorp} className="btn btn-primary btn-sm m-2">
+        <button
+          onClick={() => this.props.onAddToCorp(this.props.item)}
+          className="btn btn-primary btn-sm m-2"
+        >
           {inventory > 0 ? "Add to cart" : "Sold out"}
         </button>
       </li>
