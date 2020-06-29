@@ -60,31 +60,30 @@ export default class App extends Component {
   // ====================> filter functions <==============
 
   changeHandler = (e) => {
+    const { userInput, data } = this.state;
     this.setState({
       userInput: e.target.value.trim(),
     });
-    const userText = this.state.userInput.toLowerCase();
-    let newArr = this.state.data.filter(
-      (item) => item.productName === userText
-    );
-    this.state.userInput === ""
+    const userText = userInput.toLowerCase();
+    let newArr = data.filter((item) => item.productName === userText);
+    userInput === ""
       ? this.setState({ filteredData: [] })
       : this.setState({ filteredData: newArr });
   };
 
   submitHandler = (e) => {
+    const { userInput, data } = this.state;
     e.preventDefault();
-    const userText = this.state.userInput.toLowerCase();
+    const userText = userInput.toLowerCase();
     const searchText = userText ? userText : "";
-    let newArr = this.state.data.filter(
-      (item) => item.productName === searchText
-    );
+    let newArr = data.filter((item) => item.productName === searchText);
     this.setState({
       filteredData: newArr,
     });
   };
 
   render() {
+    const { userInput, filteredData, data, totalCoasts } = this.state;
     return (
       <React.Fragment>
         <header className="header">
@@ -92,13 +91,11 @@ export default class App extends Component {
           <Counter
             onPrint={this.handlePrintPill}
             onReset={this.handleReset}
-            totalCoasts={this.state.totalCoasts}
+            totalCoasts={totalCoasts}
           />
         </header>
         <ProductList
-          data={
-            this.state.userInput ? this.state.filteredData : this.state.data
-          }
+          data={userInput ? filteredData : data}
           onIncrement={this.increment}
           onDecrement={this.decrement}
           onAddToCorp={this.addToCorp}
