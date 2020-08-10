@@ -2,7 +2,7 @@
 
 # Installation:
  Navigate to the containing directory then open the terminal and run `npm i` then `npm start` 
-<br>
+<br><br>
 # Technologies:
 ### React
 ### JavaScript
